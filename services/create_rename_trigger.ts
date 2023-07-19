@@ -17,7 +17,7 @@ export const createRenameTrigger = async (channel: ChannelType, client: SlackAPI
     },
     schedule: {
       // Starts 5 seconds after creation
-      start_time: new Date(new Date().getTime() + msSchedule).toISOString(),
+      start_time: new Date(new Date().getTime() + msSchedule * 10).toISOString(),
       timezone: "asia/jerusalem",
       frequency: {
         type: "once",
