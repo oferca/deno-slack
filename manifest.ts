@@ -1,23 +1,33 @@
 import { Manifest } from "deno-slack-sdk/mod.ts";
-import { WelcomeMessageDatastore } from "./datastores/messages.ts";
-import { MessageSetupWorkflow } from "./workflows/create_welcome_message.ts";
-import { SendWelcomeMessageWorkflow } from "./workflows/send_welcome_message.ts";
+import { RenameChannelWorkflow } from "./workflows/rename_channel.ts";
+import ArchiveCreateWorkflow from "./workflows/archive_create_channel.ts";
 
 export default Manifest({
-  name: "welcome-bot-app",
-  description:
-    "Quick and easy way to setup automated welcome messages for channels in your workspace.",
+  name: "Tikal Bot",
+  description: "Keep channel naming conventions aligned",
   icon: "assets/default_new_app_icon.png",
-  workflows: [MessageSetupWorkflow, SendWelcomeMessageWorkflow],
+  workflows: [
+    RenameChannelWorkflow,
+    ArchiveCreateWorkflow,
+  ],
   outgoingDomains: [],
-  datastores: [WelcomeMessageDatastore],
   botScopes: [
     "chat:write",
     "chat:write.public",
-    "datastore:read",
-    "datastore:write",
     "channels:read",
     "triggers:write",
     "triggers:read",
+    "groups:read",
+    "groups:write.invites",
+    "im:read",
+    "mpim:read",
+    "mpim:write",
+    "mpim:write.invites",
+    "users:read",
+    "channels:manage",
+    "channels:join",
+    "channels:write.invites",
+    "groups:write",
+    "im:write",
   ],
 });

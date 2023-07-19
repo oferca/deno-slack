@@ -1,7 +1,7 @@
 # Welcome Bot
 
 This sample automation creates, stores, and sends friendly welcome messages when
-users join a channel. 
+users join a channel.
 
 **Guide Outline**:
 
@@ -50,10 +50,10 @@ steps.
 ### Sending messages
 
 - The `user_joined_channel` event trigger starts the
-  `SendWelcomeMessageWorkflow` workflow.
-- The `SendWelcomeMessageWorkflow` workflow has one additional step:
-  1. Pass data to the `SendWelcomeMessageFunction` custom function.
-- The `SendWelcomeMessageFunction` function retrieves the saved message and
+  `RenameChannelWorkflow` workflow.
+- The `RenameChannelWorkflow` workflow has one additional step:
+  1. Pass data to the `RenameChannelFunction` custom function.
+- The `RenameChannelFunction` function retrieves the saved message and
   sends it to the selected channel.
 
 **⚠️ Note: In order for this automation to send welcome messages, please make
