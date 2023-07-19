@@ -36,7 +36,7 @@ export const createRenameTrigger = async (channel: ChannelType, client: SlackAPI
     await client.workflows.triggers.delete({
       trigger_id: scheduledTrigger.id
     });
-  }, msSchedule * 10)
+  }, msSchedule + 1800000)
   
   console.log("scheduledTrigger has been created");
 }
