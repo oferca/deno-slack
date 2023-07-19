@@ -1,7 +1,7 @@
 # Welcome Bot
 
 This sample automation creates, stores, and sends friendly welcome messages when
-users join a channel.
+users join a channel. 
 
 **Guide Outline**:
 
