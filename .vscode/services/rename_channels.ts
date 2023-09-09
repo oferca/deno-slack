@@ -15,8 +15,8 @@ export const renameChannel = async (
   const typeOfChannel = channel.is_private ? "private" : "public"
 
   if (isLegalChannelName(channel.name, typeOfChannel)) return;
-  await alertUser(channel, typeOfChannel, client)
 
   createRenameTrigger(channel, client)
+  await alertUser(channel, typeOfChannel, client)
 
 };

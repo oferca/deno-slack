@@ -4,7 +4,7 @@ import { ChannelType } from "../helpers/types.ts";
 
 export const createRenameTrigger = async (channel: ChannelType, client: SlackAPIClient) => {
   
-  const msSchedule = 500
+  const msSchedule = 1000
   const scheduledTrigger = await client.workflows.triggers.create({
     name: `Channel Archive Rename Schedule`,
     workflow: "#/workflows/archive_create_channel",
@@ -36,7 +36,7 @@ export const createRenameTrigger = async (channel: ChannelType, client: SlackAPI
     await client.workflows.triggers.delete({
       trigger_id: scheduledTrigger.id
     });
-  }, msSchedule * 10)
+  }, 14000) // Need 15 seconds or less
   
   console.log("scheduledTrigger has been created");
 }

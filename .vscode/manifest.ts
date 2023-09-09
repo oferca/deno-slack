@@ -1,5 +1,6 @@
 import { Manifest } from "deno-slack-sdk/mod.ts";
 import { RenameChannelWorkflow } from "./workflows/rename_channel.ts";
+import { SyncGoogleGroupsWorkflow } from "./workflows/sync_google_groups.ts";
 import ArchiveCreateWorkflow from "./workflows/archive_create_channel.ts";
 
 export default Manifest({
@@ -9,6 +10,7 @@ export default Manifest({
   workflows: [
     RenameChannelWorkflow,
     ArchiveCreateWorkflow,
+    SyncGoogleGroupsWorkflow
   ],
   outgoingDomains: [],
   botScopes: [
@@ -28,6 +30,7 @@ export default Manifest({
     "channels:join",
     "channels:write.invites",
     "groups:write",
+    "usergroups:write",
     "im:write",
   ],
 });

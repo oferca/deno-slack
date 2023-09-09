@@ -19,8 +19,8 @@ export const getRenameMessageText = (
     (allowed.length > 1 ? " one of the following prefixes: " : "") +
     allowed.map((pref) => `"${pref}-"`).join();
   return `Dear ${userRealName}, \n
-Your channel "${channelName}" has been archived as ${channelType} channel names in Tikal must begin with *${prefList}*. \n
-A new channel will be created: *${allowed[0]}-${channelName}*. An invitation to join will be sent. \n
+Your channel "${channelName}" was archived as ${channelType} channel names must start with a *${prefList} prefix*. \n
+A new channel was created: *${allowed[0]}-${channelName}*. \n
 Kind regards,\n
 Tikal Slack Bot
 `;
